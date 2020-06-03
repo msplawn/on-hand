@@ -17,7 +17,13 @@ function displayThirsty()    {
     $('#thirstyPage').style('display: none');
 }
 
-// This is the beginnings of the ajax request
+// This is the function to clear the search criteria and #cocktailResults section
+function clear() {
+    $("#cocktailResults").empty();
+    //code to get ride of established search criteria and query add ons
+  }
+
+// This is the beginnings of the ajax request, use #searchCocktails for the search button ID
 $('#searchCocktails').on('click', function(event)    {
     event.preventDefault();
 

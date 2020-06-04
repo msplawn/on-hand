@@ -15,6 +15,7 @@ function displayLanding()    {
     $('#landingPage').attr('style','display: flex');
     $('#hungryPage').attr('style', 'display: none');
     $('#thirstyPage').attr('style','display: none');
+
 }
 //I made a clear search function as well see below - Jess
 // This is the function to clear the search criteria and #cocktailResults section

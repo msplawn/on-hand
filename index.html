@@ -2,88 +2,105 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>On Hand</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/d927b12b46.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>On Hand</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/d927b12b46.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
-  </head>
+</head>
 
 <body>
-    <!-- The landing page container -->
-    <div class="ui container">
-        <!-- Nav bar -->
-        <div class="ui fluid three item menu">
-            <a class="item #hungry">Food</a>
-            <a class="item #landing">Home</a>
-            <a class="item #thirsty">Drink</a>
+  <!-- The landing page container -->
+  <div class="ui fluid three item menu" id="nav">
+    <a class="item" id="hungry">Food</a>
+    <a class="item" id="landing">Home</a>
+    <a class="item" id="thirsty">Drink</a>
+  </div>
+
+  <div class="ui container">
+    <!-- Nav bar -->
+
+    <!-- Main logo -->
+    <div class="ui two column centered grid" id="landingPage">
+      <div class="column center row">
+        <p> Eat & drink with what you have...</p>
+        <br>
+        <br />
+      </div>
+
+      <div class="column center row">
+        <p1>On Hand</p1>
+        <br>
+        </br>
+
+
+      </div>
+
+
+      <div class="column center row">
+        <i class="far fa-hand-paper"></i>
+
+      </div>
+
+      <div class="column center row">
+        <p> A simple solution for meals & cocktails </p>
+      </div>
+
+      <br />
+      <!-- Hungry button -->
+      <div class="center aligned two column row">
+        <div class="column">
+
+          <button class="ui button" id="hungry">
+            <i class="fas fa-utensils"></i>
+            <p>Hungry?</p>
+          </button>
+
         </div>
-        <!-- Main logo -->
-        <div class="ui two column centered grid #landingPage">
-            <div class="column center row">
-                <p> Eat & drink with what you have...</p>
-                <br>
-                <br />
-            </div>
+        <!-- Thirsty button -->
+        <div class="column-4">
 
-            <div class="column center row">
-                <p1>On Hand</p1>
-                <br>
-                </br>
+          <button class="ui button" id="thirsty">
+            <i class="fas fa-cocktail"></i>
+            <p>Thirsty?</p>
+          </button>
 
 
-            </div>
-
-
-            <div class="column center row">
-                <i class="far fa-hand-paper"></i>
-
-            </div>
-
-            <div class="column center row">
-                <p> A simple solution for meals & cocktails </p>
-            </div>
-
-            <br />
-            <!-- Hungry button -->
-            <div class="center aligned two column row">
-                <div class="column">
-
-                    <button class="ui button #hungry">
-                        <i class="fas fa-utensils"></i>
-                        <p>Hungry?</p>
-                    </button>
-
-                </div>
-                <!-- Thirsty button -->
-                <div class="column-4">
-
-                    <button class="ui button #thirsty">
-                        <i class="fas fa-cocktail"></i>
-                        <p>Thirsty?</p>
-                    </button>
-
-
-                </div>
-            </div>
         </div>
+      </div>
     </div>
-    <br>
-    <br />
-    <div class="ui centered grid">
-        <div class="column-6">
-            <h3>On Hand is brought to you by M J V J</h3>
-            <i class="far fa-copyright">2020</i>
-        </div>
+
+    <div id="thirstyPage">
+
+    </div>
+
+    <div id="hungryPage">
+
+    </div>
 
 
 
-        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-        <script src="base.js"></script>
+  </div>
+
+
+
+  <br>
+  <br />
+  <div class="ui centered grid">
+    <div class="column-6">
+      <h3>On Hand is brought to you by M J V J</h3>
+      <i class="far fa-copyright">2020</i>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="base.js"></script>
 </body>
 
 </html>

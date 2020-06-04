@@ -181,6 +181,6 @@ $('#searchCocktails').on('click', function (event) {
 
 //These three IDs refer to the containers for the hungry / thirsty button&icon container 
 //and the landing button in the nav
-$('#hungry').on('click', displayHungry);
-$('#thirsty').on('click', displayThirsty);
-$('#landing').on('click', displayLanding);
+$('.hungry').on('click', displayHungry);
+$('.thirsty').on('click', displayThirsty);
+$('.landing').on('click', displayLanding);

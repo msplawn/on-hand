@@ -1,20 +1,21 @@
 //The 3 IDs in these functions are for the containers around the three "pages" to be displayed
 function displayHungry()    {
-    $('#hungryPage').attr('style', 'display: flex');
-    $('#landingPage').attr('style', 'display: none');
-    $('#thirstyPage').attr('style', 'display: none');
+    $('#hungryPage').attr('style','display: flex');
+    $('#landingPage').attr('style','display: none');
+    $('#thirstyPage').attr('style','display: none');
 }
 
 function displayThirsty()    {
-    $('#thirstyPage').attr('style', 'display: flex');
-    $('#landingPage').attr('style', 'display: none');
-    $('#hungryPage').attr('style', 'display: none');
+    $('#thirstyPage').attr('style','display: flex');
+    $('#landingPage').attr('style','display: none');
+    $('#hungryPage').attr('style','display: none');
 }
 
 function displayLanding()    {
-    $('#landingPage').attr('style', 'display: flex');
+    $('#landingPage').attr('style','display: flex');
     $('#hungryPage').attr('style', 'display: none');
-    $('#thirstyPage').attr('style', 'display: none');
+    $('#thirstyPage').attr('style','display: none');
+
 }
 //I made a clear search function as well see below - Jess
 // This is the function to clear the search criteria and #cocktailResults section
@@ -181,6 +182,5 @@ $('#searchCocktails').on('click', function (event) {
 //These three IDs refer to the containers for the hungry / thirsty button&icon container 
 //and the landing button in the nav
 $('#hungry').on('click', displayHungry);
-
 $('#thirsty').on('click', displayThirsty);
 $('#landing').on('click', displayLanding);

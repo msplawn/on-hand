@@ -1,10 +1,14 @@
-
+body{
+    
+}
 #nav    {
     position: fixed;
     top: 0;
     width: 100%;
+    padding: 7px;
     justify-content: center;
     margin-bottom: 20px;
+    font-family: 'Baloo Thambi 2', cursive;
 }
 .container {
     background-color: whitesmoke;
@@ -18,6 +22,7 @@ p1 {
     font-size: 75px;
     font-family: 'Baloo Thambi 2', cursive;
     font-weight: bold;
+    margin: 30px 20px 20px 20px;
     
 }
 
@@ -34,9 +39,14 @@ p2 {
 }
 
 .fa-hand-paper {
+    margin: 25px;
     font-size: 200px;
     color:#36DDFF;
     
+}
+
+#subtitle   {
+    margin: 15px 35px 40px 35px;
 }
 
 .fa-utensils {
@@ -62,4 +72,8 @@ p2 {
 #hungryPage {
     display: none;
 
+}
+
+.footer {
+    font-family: font-family: 'Baloo Thambi 2', cursive;;
 }

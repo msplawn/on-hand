@@ -1,3 +1,4 @@
+
 #nav    {
     position: fixed;
     top: 0;
@@ -9,6 +10,7 @@
     background-color: whitesmoke;
     padding: 70px;
     margin-top: 30px;
+
 
 } 
 
@@ -38,17 +40,26 @@ p2 {
 }
 
 .fa-utensils {
+<<<<<<< HEAD
     font-size: 90px;
+=======
+    font-size: 120px;
+>>>>>>> master
     color: #36DDFF;
 }
 
 .fa-cocktail {
+<<<<<<< HEAD
     font-size: 90px;
+=======
+    font-size: 120px;
+>>>>>>> master
     color: #36DDFF;
 }
 
 .button {
     box-shadow: 2.5px 2.5px 2.5px 2.5px gray !important;
+<<<<<<< HEAD
 }
 
 /* THIRSTY PAGE CSS */
@@ -59,4 +70,6 @@ p2 {
 /* HUNGRY PAGE CSS */
 #hungryPage {
     display: none;
+=======
+>>>>>>> master
 }

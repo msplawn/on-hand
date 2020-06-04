@@ -9,6 +9,7 @@ body{
     justify-content: center;
     margin-bottom: 20px;
     font-family: 'Baloo Thambi 2', cursive;
+    font-size: 20px;
 }
 .container {
     background-color: whitesmoke;
@@ -22,7 +23,7 @@ p1 {
     font-size: 75px;
     font-family: 'Baloo Thambi 2', cursive;
     font-weight: bold;
-    margin: 30px 20px 20px 20px;
+    margin: 50px 20px 20px 20px;
     
 }
 
@@ -60,7 +61,7 @@ p2 {
 }
 
 .button {
-    box-shadow: 2.5px 2.5px 2.5px 2.5px gray !important;
+    box-shadow: 5px 5px 10px gray !important;
 }
 
 /* THIRSTY PAGE CSS */

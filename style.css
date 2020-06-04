@@ -1,0 +1,42 @@
+.container {
+    background-color: whitesmoke;
+} 
+
+p1 {
+    font-size: 75px;
+    font-family: 'Baloo Thambi 2', cursive;
+    font-weight: bold;
+    
+}
+
+p {
+    font-size: 28px;
+    font-family: 'Baloo Thambi 2', cursive;
+    color: black;
+}
+
+p2 {
+    font-size: 28px;
+    font-family: 'Baloo Thambi 2', cursive;
+    color: black;
+}
+
+.fa-hand-paper {
+    font-size: 200px;
+    color:#36DDFF;
+    
+}
+
+.fa-utensils {
+    font-size: 120px;
+    color: #36DDFF;
+}
+
+.fa-cocktail {
+    font-size: 120px;
+    color: #36DDFF;
+}
+
+.button {
+    box-shadow: 2.5px 2.5px 2.5px 2.5px gray !important;
+}

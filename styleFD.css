@@ -1,0 +1,53 @@
+.container {
+  background-color: whitesmoke;
+}
+
+p1 {
+  font-size: 75px;
+  font-family: "Baloo Thambi 2", cursive;
+  font-weight: bold;
+}
+
+p {
+  font-size: 28px;
+  font-family: "Baloo Thambi 2", cursive;
+  color: black;
+}
+
+p2 {
+  font-size: 28px;
+  font-family: "Baloo Thambi 2", cursive;
+  color: black;
+}
+
+.fa-hand-paper {
+  font-size: 200px;
+  color: #36ddff;
+}
+
+.fa-utensils {
+  font-size: 120px;
+  color: #36ddff;
+}
+
+.fa-cocktail {
+  font-size: 120px;
+  color: #36ddff;
+}
+
+.button {
+  box-shadow: 2.5px 2.5px 2.5px 2.5px gray !important;
+}
+
+/* food page CSS */
+.forkKnife {
+  font-size: 70px;
+  color: #36ddff;
+}
+
+/* drink page CSS */
+.drinky {
+    font-size: 70px;
+    color: #36ddff;
+  }
+  

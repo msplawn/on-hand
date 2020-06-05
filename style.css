@@ -1,0 +1,87 @@
+#nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 7px;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-family: 'Baloo Thambi 2', cursive;
+    font-size: 20px;
+}
+
+.container {
+    background-color: whitesmoke;
+    padding: 70px;
+    margin-top: 30px;
+
+
+}
+
+p1 {
+    font-size: 75px;
+    font-family: 'Baloo Thambi 2', cursive;
+    font-weight: bold;
+    margin: 50px 20px 20px 20px;
+
+}
+
+p {
+    font-size: 28px;
+    font-family: 'Baloo Thambi 2', cursive;
+    color: black;
+}
+
+p2 {
+    font-size: 28px;
+    font-family: 'Baloo Thambi 2', cursive;
+    color: black;
+}
+
+.fa-hand-paper {
+    margin: 25px;
+    font-size: 200px;
+    color: #36DDFF;
+
+}
+
+#subtitle {
+    margin: 15px 35px 40px 35px;
+}
+
+.fa-utensils {
+    font-size: 90px;
+    color: #36DDFF;
+}
+
+.fa-cocktail {
+    font-size: 90px;
+    color: #36DDFF;
+}
+
+.button {
+    box-shadow: 5px 5px 10px gray !important;
+}
+
+/* THIRSTY PAGE CSS */
+#thirstyPage {
+    display: none;
+}
+
+.drinky {
+    font-size: 70px;
+    color: #36ddff;
+  }
+/* HUNGRY PAGE CSS */
+#hungryPage {
+    display: none;
+}
+
+.forkKnife {
+    font-size: 70px;
+    color: #36ddff;
+  }
+
+.footer {
+    font-family: 'Baloo Thambi 2', cursive;
+    ;
+}

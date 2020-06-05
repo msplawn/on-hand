@@ -15,12 +15,6 @@ function displayLanding()    {
     $('#landingPage').attr('style','display: flex');
     $('#hungryPage').attr('style', 'display: none');
     $('#thirstyPage').attr('style','display: none');
-
-}
-//=======================================================
-//probably dont need this finction now - Jess
-function buildQueryURL() {
-
 }
 
 var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";

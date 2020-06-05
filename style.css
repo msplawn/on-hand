@@ -1,4 +1,4 @@
-#nav    {
+#nav {
     position: fixed;
     top: 0;
     width: 100%;
@@ -8,20 +8,21 @@
     font-family: 'Baloo Thambi 2', cursive;
     font-size: 20px;
 }
+
 .container {
     background-color: whitesmoke;
     padding: 70px;
     margin-top: 30px;
 
 
-} 
+}
 
 p1 {
     font-size: 75px;
     font-family: 'Baloo Thambi 2', cursive;
     font-weight: bold;
     margin: 50px 20px 20px 20px;
-    
+
 }
 
 p {
@@ -39,11 +40,11 @@ p2 {
 .fa-hand-paper {
     margin: 25px;
     font-size: 200px;
-    color:#36DDFF;
-    
+    color: #36DDFF;
+
 }
 
-#subtitle   {
+#subtitle {
     margin: 15px 35px 40px 35px;
 }
 
@@ -62,16 +63,25 @@ p2 {
 }
 
 /* THIRSTY PAGE CSS */
-#thirstyPage    {
+#thirstyPage {
     display: none;
 }
 
+.drinky {
+    font-size: 70px;
+    color: #36ddff;
+  }
 /* HUNGRY PAGE CSS */
 #hungryPage {
     display: none;
-
 }
 
+.forkKnife {
+    font-size: 70px;
+    color: #36ddff;
+  }
+
 .footer {
-    font-family: 'Baloo Thambi 2', cursive;;
+    font-family: 'Baloo Thambi 2', cursive;
+    ;
 }

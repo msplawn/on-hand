@@ -22,10 +22,10 @@ function displayLanding()    {
 function clear() {
     $("#cocktailResults").empty();
     //code to get ride of established search criteria and query add ons
-  }
+}
 
 // This is the beginnings of the ajax request, use #searchCocktails for the search button ID
-$('#searchCocktails').on('click', function(event)    {
+$('#searchCocktails').on('click', function (event) {
     event.preventDefault();
 
     // clear();
@@ -36,10 +36,10 @@ $('#searchCocktails').on('click', function(event)    {
     $.ajax({
         url: queryURL,
         method: "GET"
-      }).then(function(response)    {
-      console.log(response);
-      
-      });
+    }).then(function (response) {
+        console.log(response);
+
+    });
 });
 
 //The start of Jess code 

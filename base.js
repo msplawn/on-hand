@@ -1,21 +1,4 @@
-//The 3 IDs in these functions are for the containers around the three "pages" to be displayed
-function displayHungry()    {
-    $('#hungryPage').attr('style','display: flex');
-    $('#landingPage').attr('style','display: none');
-    $('#thirstyPage').attr('style','display: none');
-}
-
-function displayThirsty()    {
-    $('#thirstyPage').attr('style','display: flex');
-    $('#landingPage').attr('style','display: none');
-    $('#hungryPage').attr('style','display: none');
-}
-
-function displayLanding()    {
-    $('#landingPage').attr('style','display: flex');
-    $('#hungryPage').attr('style', 'display: none');
-    $('#thirstyPage').attr('style','display: none');
-}
+var results = $("#results");
 
 var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
@@ -27,7 +10,6 @@ function mapNumberedKeys(item, field) {
         count++;
     }
     return array;
-}
 
 function updatePage(allDrinks) {
     //console.log(allDrinks);
@@ -66,34 +48,63 @@ function updatePage(allDrinks) {
 }
 
 
-function clear() {
-    $("#ingredientSearch").empty();
 }
 
+function updatePage(allDrinks) {
+    //console.log(allDrinks);
+
+
+    allDrinks.map((drink) => {
+        //need to connect elements to semantic elements - jess
+
+        var drinkCard = $('<div class ="ui card">');
+
+        var $drinkImg = $('<div class="image">');
+        $("<img src=" + drink.img + ">").appendTo($drinkImg);
+        $drinkImg.appendTo(drinkCard);
+
+        var cardBody = $('<div class ="content">')
+        $("<h2>").text(drink.name).appendTo(cardBody);
+        $("<h4>").text(drink.ingredient).appendTo(cardBody);
+        $("<h4>").text(drink.measure).appendTo(cardBody);
+        $("<h4>").text(drink.instructions).appendTo(cardBody);
+
+        cardBody.appendTo(drinkCard);
+        drinkCard.appendTo("#results");
+
+    })
+}
 
 $("#searchCocktails").on('click', function (event) {
     event.preventDefault();
     var ingredientName = $('#userInput').val().trim();
-
-
-    queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+    results.empty();
+  
+   queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
+
+        if (response.drinks === null){
+            alert("No");
+        }
+    
         // console.log(response);
         // console.log(response.drinks);
 
 
         let allDrinks = [];
         //loop through length of drinks 
+        
 
         for (var i = 0; i < response.drinks.length; i++) {
             var drink = response.drinks[i];
 
             let drinkResult = {};
             
+
             let count = 1;
             var ingredients = mapNumberedKeys(drink, "Ingredient");
             var measurements = mapNumberedKeys(drink, "Measure");
@@ -101,8 +112,8 @@ $("#searchCocktails").on('click', function (event) {
             var strDrinkThumb = (drink.strDrinkThumb);
             var strInstructions = (drink.strInstructions);
 
-
             if (ingredients.includes(ingredientName.toLowerCase())) {
+
 
                 drinkResult.name = strDrink;
                 drinkResult.img = strDrinkThumb;
@@ -113,9 +124,6 @@ $("#searchCocktails").on('click', function (event) {
                 allDrinks.push(drinkResult);
                 
                 // console.log(ingredients);
-
-
-
                 // console.log("Drink Name:", strDrink);
                 // console.log("Drink Image:", strDrinkThumb);
                 //console.log("Ingredient:", ingredients);
@@ -125,15 +133,19 @@ $("#searchCocktails").on('click', function (event) {
 
             }
 
-            if (allDrinks.empty){
-                alert("No");
+
+            function noIngredient() {
+                if (ingredients === 0) {
+                    alert("No")
+                }
             }
-            console.log(allDrinks);
+
 
         }
-        
+
 
         updatePage(allDrinks);
+           
 
        
 
@@ -147,10 +159,5 @@ $("#searchCocktails").on('click', function (event) {
 });
 
 
-//=======================================================
 
-//These three IDs refer to the containers for the hungry / thirsty button&icon container 
-//and the landing button in the nav
-$('.hungry').on('click', displayHungry);
-$('.thirsty').on('click', displayThirsty);
-$('.landing').on('click', displayLanding);
+

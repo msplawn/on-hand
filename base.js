@@ -1,156 +1,110 @@
-//The 3 IDs in these functions are for the containers around the three "pages" to be displayed
-function displayHungry()    {
-    $('#hungryPage').attr('style','display: flex');
-    $('#landingPage').attr('style','display: none');
-    $('#thirstyPage').attr('style','display: none');
-}
-
-function displayThirsty()    {
-    $('#thirstyPage').attr('style','display: flex');
-    $('#landingPage').attr('style','display: none');
-    $('#hungryPage').attr('style','display: none');
-}
-
-function displayLanding()    {
-    $('#landingPage').attr('style','display: flex');
-    $('#hungryPage').attr('style', 'display: none');
-    $('#thirstyPage').attr('style','display: none');
-}
+//global variables
+var resultSection = $("#results");
 
 var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
 function mapNumberedKeys(item, field) {
     var count = 1;
     var array = [];
+
     while (item[`str${field}${count}`]) {
         array.push(item[`str${field}${count}`].toLowerCase());
         count++;
     }
+
     return array;
+
 }
 
+// Creates cards if there are ingredients for that entry
 function updatePage(allDrinks) {
-    //console.log(allDrinks);
 
     allDrinks.map((drink) => {
-//need to connect elements to semantic elements - jess
 
         var drinkCard = $('<div class ="ui card">');
 
-        var $drinkName = $("<h2>");
-        $drinkName.text(drink.name);
-        $("#drink-results").append($drinkName);
-
-
         var $drinkImg = $('<div class="image">');
         $("<img src=" + drink.img + ">").appendTo($drinkImg);
-        $drinkImg.appendTo("#drink-results");
+        $drinkImg.appendTo(drinkCard);
 
-        var $drinkIngredients = $("<li>");
-        $drinkIngredients.text(drink.ingredient);
-        $("#drink-results").append($drinkIngredients);
+        var cardBody = $('<div class ="content">')
+        $("<h2>").text(drink.name).appendTo(cardBody);
+        $("<h4>").text(drink.ingredient).appendTo(cardBody);
+        $("<h4>").text(drink.measure).appendTo(cardBody);
+        $("<h4>").text(drink.instructions).appendTo(cardBody);
 
-        var $drinkMeasurments = $("<li>");
-        $drinkMeasurments.text(drink.measure);
-        $("#drink-results").append($drinkMeasurments);
-
-        var $drinkInstructions = $("<p>");
-        $drinkInstructions.text(drink.instructions);
-        $("#drink-results").append($drinkInstructions);
-
+        cardBody.appendTo(drinkCard);
+        drinkCard.appendTo("#results");
 
     })
-
-
-
 }
 
-
-function clear() {
-    $("#ingredientSearch").empty();
-}
-
-
+// Button click to show cocktails based on ingredients entry
 $("#searchCocktails").on('click', function (event) {
     event.preventDefault();
     var ingredientName = $('#userInput').val().trim();
+    resultSection.empty();
 
+    if (ingredientName !== "") {
 
-    queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+        queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        // console.log(response);
-        // console.log(response.drinks);
+        // Pulls response from the API
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
 
-
-        let allDrinks = [];
-        //loop through length of drinks 
-
-        for (var i = 0; i < response.drinks.length; i++) {
-            var drink = response.drinks[i];
-
-            let drinkResult = {};
+            let allDrinks = [];
             
-            let count = 1;
-            var ingredients = mapNumberedKeys(drink, "Ingredient");
-            var measurements = mapNumberedKeys(drink, "Measure");
-            var strDrink = (drink.strDrink);
-            var strDrinkThumb = (drink.strDrinkThumb);
-            var strInstructions = (drink.strInstructions);
+            //loop through length of drinks 
+            for (var i = 0; i < response.drinks.length; i++) {
+                var drink = response.drinks[i];
 
+                let drinkResult = {};
 
-            if (ingredients.includes(ingredientName.toLowerCase())) {
+                let count = 1;
+                var ingredients = mapNumberedKeys(drink, "Ingredient");
+                var measurements = mapNumberedKeys(drink, "Measure");
+                var strDrink = (drink.strDrink);
+                var strDrinkThumb = (drink.strDrinkThumb);
+                var strInstructions = (drink.strInstructions);
 
-                drinkResult.name = strDrink;
-                drinkResult.img = strDrinkThumb;
-                //console.log(strDrinkThumb);
-                drinkResult.ingredient = ingredients;
-                drinkResult.measure = measurements;
-                drinkResult.instructions = strInstructions;
-                allDrinks.push(drinkResult);
-                
-                // console.log(ingredients);
+                if (ingredients.includes(ingredientName.toLowerCase())) {
 
+                    drinkResult.name = strDrink;
+                    drinkResult.img = strDrinkThumb;
+                    drinkResult.ingredient = ingredients;
+                    drinkResult.measure = measurements;
+                    drinkResult.instructions = strInstructions;
 
+                    allDrinks.push(drinkResult);
 
-                // console.log("Drink Name:", strDrink);
-                // console.log("Drink Image:", strDrinkThumb);
-                //console.log("Ingredient:", ingredients);
-                // console.log("Measure:", measurements);
-                // console.log("Instructions:", strInstructions);
-
+                }
 
             }
 
-            if (allDrinks.empty){
-                alert("No");
+            //If an entry has no ingredients, it will display a message
+            if (!allDrinks.length) {
+                resultSection.html('<div class="ui massive negative message">' +
+                    '<i class="close icon"></i>' +
+                    '<div class="header">' +
+                    'There\'s no recipes for that entry!' +
+                    '</div>' +
+                    '<p>Please try again' +
+                    '</p></div>');
+
+                $('.close').on('click', function () {
+                    resultSection.empty();
+                });
+
+                return;
+
+            } else {
+                updatePage(allDrinks);
             }
-            console.log(allDrinks);
 
-        }
-        
-
-        updatePage(allDrinks);
-
-       
-
-    });
-
-
-    //.on("click") function associated with the clear button
-    // $("#clear-all").on("click", clear);
-
+        });
+    }
 
 });
-
-
-//=======================================================
-
-//These three IDs refer to the containers for the hungry / thirsty button&icon container 
-//and the landing button in the nav
-$('.hungry').on('click', displayHungry);
-$('.thirsty').on('click', displayThirsty);
-$('.landing').on('click', displayLanding);

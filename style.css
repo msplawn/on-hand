@@ -59,6 +59,12 @@ footer {
     margin-top: -100px;
 }
 
+#subtitle   {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 40px;
+}
+
 .buttons {
     padding: 50px;
     font-family: 'Montserrat Alternates', sans-serif;
@@ -86,16 +92,22 @@ h4, h2  {
 #userInput {
     font-family: 'Montserrat Alternates', sans-serif;
     margin: 50px 30px 30px 30px;
+    text-align: center;
 }
 
 @media screen and (max-width: 411px) {
     .name   {
         font-size: 50px;
-        
+     
     }
 
     .heart  {
         margin: auto;
+    }
+
+    #subtitle   {
+        font-size: 20px;
+        margin-top: 20px;
     }
 
     #userInput  {

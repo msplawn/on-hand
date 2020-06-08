@@ -1,87 +1,142 @@
-#nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 7px;
-    justify-content: center;
-    margin-bottom: 20px;
-    font-family: 'Baloo Thambi 2', cursive;
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin: 20px 5%;
+}
+
+.search-bar {
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+}
+
+.name {
+    margin-top: inherit;
+    text-shadow: 3px 3px 3px grey;
+}
+
+.txHead {
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: black;
+    text-align: center;
+    font-size: 60px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.inline {
+    margin: 50px 50px;
+}
+
+
+#searchCocktails {
+
+    box-shadow: 3px 3px 3px grey;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+}
+
+#recipeBtn {
+    box-shadow: 3px 3px 3px grey;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+}
+
+.image {
+    size: 10px;
+
+}
+
+
+footer {
+    background-color: white;
+    margin-top: 10px;
+    margin: 20px;
+    margin-bottom: 0;
+}
+
+.heart {
+    max-width: 100px;
+    margin-top: -50px;
+}
+
+#subtitle   {
     font-size: 20px;
-}
-
-.container {
-    background-color: whitesmoke;
-    padding: 70px;
+    text-align: center;
     margin-top: 30px;
-
-
 }
 
-p1 {
-    font-size: 75px;
-    font-family: 'Baloo Thambi 2', cursive;
-    font-weight: bold;
-    margin: 50px 20px 20px 20px;
-
+.buttons {
+    padding: 10px 25px 25px 25px;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
-p {
-    font-size: 28px;
-    font-family: 'Baloo Thambi 2', cursive;
-    color: black;
+.ui.button.large {
+    height: 160px;
+    
 }
 
-p2 {
-    font-size: 28px;
-    font-family: 'Baloo Thambi 2', cursive;
-    color: black;
+
+.martini {
+    max-width: 50px;
+    margin: 8px;
 }
 
-.fa-hand-paper {
-    margin: 25px;
-    font-size: 200px;
-    color: #36DDFF;
-
+.kitchen {
+    max-width: 50px;
+    margin: 8px;
 }
 
-#subtitle {
-    margin: 15px 35px 40px 35px;
+#results {
+    margin: 50px;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
-.fa-utensils {
-    font-size: 90px;
-    color: #36DDFF;
+h4, h2  {
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
-.fa-cocktail {
-    font-size: 90px;
-    color: #36DDFF;
+#userInput {
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin: 15px;
+    text-align: center;
 }
 
-.button {
-    box-shadow: 5px 5px 10px gray !important;
-}
+@media screen and (max-width: 600px) {
+    .name   {
+        font-size: 50px;
+    }
 
-/* THIRSTY PAGE CSS */
-#thirstyPage {
-    display: none;
-}
+    .heart  {
+        margin: auto;
+    }
 
-.drinky {
-    font-size: 70px;
-    color: #36ddff;
-  }
-/* HUNGRY PAGE CSS */
-#hungryPage {
-    display: none;
-}
+    #subtitle   {
+        font-size: 20px;
+        margin-top: 20px;
+    }
 
-.forkKnife {
-    font-size: 70px;
-    color: #36ddff;
-  }
+    #userInput  {
+        width: 90%;
+        margin: auto;
+    }
 
-.footer {
-    font-family: 'Baloo Thambi 2', cursive;
-    ;
+    .buttons    {
+        justify-content: center;
+    }
+    button    {
+        text-align: center;
+        width: 50%;
+        margin: auto;
+    }
+    .martini, .kitchen  {
+        margin: auto;
+        padding: 8px;
+    }
+
+    #searchCocktails    {
+        border-right: rgb(119, 119, 119) solid 2px;
+    }
+    
+
+
 }

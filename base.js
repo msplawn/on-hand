@@ -11,11 +11,48 @@ function mapNumberedKeys(item, field) {
     }
     return array;
 
+function updatePage(allDrinks) {
+    //console.log(allDrinks);
+
+    allDrinks.map((drink) => {
+//need to connect elements to semantic elements - jess
+
+        var drinkCard = $('<div class ="ui card">');
+
+        var $drinkName = $("<h2>");
+        $drinkName.text(drink.name);
+        $("#drink-results").append($drinkName);
+
+
+        var $drinkImg = $('<div class="image">');
+        $("<img src=" + drink.img + ">").appendTo($drinkImg);
+        $drinkImg.appendTo("#drink-results");
+
+        var $drinkIngredients = $("<li>");
+        $drinkIngredients.text(drink.ingredient);
+        $("#drink-results").append($drinkIngredients);
+
+        var $drinkMeasurments = $("<li>");
+        $drinkMeasurments.text(drink.measure);
+        $("#drink-results").append($drinkMeasurments);
+
+        var $drinkInstructions = $("<p>");
+        $drinkInstructions.text(drink.instructions);
+        $("#drink-results").append($drinkInstructions);
+
+
+    })
+
+
+
+}
+
 
 }
 
 function updatePage(allDrinks) {
     //console.log(allDrinks);
+
 
     allDrinks.map((drink) => {
         //need to connect elements to semantic elements - jess
@@ -36,13 +73,7 @@ function updatePage(allDrinks) {
         drinkCard.appendTo("#results");
 
     })
-
-
-
 }
-
-
-
 
 $("#searchCocktails").on('click', function (event) {
     event.preventDefault();
@@ -55,6 +86,7 @@ $("#searchCocktails").on('click', function (event) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
+
         if (response.drinks === null){
             alert("No");
         }
@@ -70,10 +102,8 @@ $("#searchCocktails").on('click', function (event) {
         for (var i = 0; i < response.drinks.length; i++) {
             var drink = response.drinks[i];
 
-
-
             let drinkResult = {};
-
+            
 
             let count = 1;
             var ingredients = mapNumberedKeys(drink, "Ingredient");
@@ -82,13 +112,8 @@ $("#searchCocktails").on('click', function (event) {
             var strDrinkThumb = (drink.strDrinkThumb);
             var strInstructions = (drink.strInstructions);
 
-            // if (ingredients.includes(!ingredientName === null)){
-            //     alert("No")
-            //             }
-            // console.log("Ingredient:", ingredients);
-
-
             if (ingredients.includes(ingredientName.toLowerCase())) {
+
 
                 drinkResult.name = strDrink;
                 drinkResult.img = strDrinkThumb;
@@ -97,19 +122,17 @@ $("#searchCocktails").on('click', function (event) {
                 drinkResult.measure = measurements;
                 drinkResult.instructions = strInstructions;
                 allDrinks.push(drinkResult);
-
+                
                 // console.log(ingredients);
-
-
-
                 // console.log("Drink Name:", strDrink);
                 // console.log("Drink Image:", strDrinkThumb);
-
+                //console.log("Ingredient:", ingredients);
                 // console.log("Measure:", measurements);
                 // console.log("Instructions:", strInstructions);
 
 
             }
+
 
             function noIngredient() {
                 if (ingredients === 0) {
@@ -122,15 +145,19 @@ $("#searchCocktails").on('click', function (event) {
 
 
         updatePage(allDrinks);
+           
 
-
+       
 
     });
 
-    
+
     //.on("click") function associated with the clear button
     // $("#clear-all").on("click", clear);
 
 
 });
+
+
+
 

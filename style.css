@@ -6,6 +6,7 @@ body {
 .search-bar {
     margin-top: 10px;
     margin-bottom: 30px;
+
 }
 
 .name {
@@ -26,6 +27,7 @@ body {
     margin: 50px 50px;
 }
 
+
 #searchCocktails {
 
     box-shadow: 5px 5px 5px grey;
@@ -36,6 +38,7 @@ body {
 #recipeBtn {
     box-shadow: 5px 5px 5px grey;
     font-family: 'Montserrat Alternates', sans-serif;
+
 }
 
 .image {
@@ -116,5 +119,6 @@ h4, h2  {
     #searchCocktails    {
         border-right: rgb(119, 119, 119) solid 2px;
     }
+
 
 }

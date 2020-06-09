@@ -108,7 +108,6 @@ $("#searchCocktails").on('click', function (event) {
                 return;
 
             } else {
-
                 //takes searched ingredient makes it uppsercase and populates it above recipe cards
                 var ingredientNameUpper = ingredientName.toUpperCase();
 

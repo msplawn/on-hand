@@ -1,6 +1,6 @@
 //global variable
 var resultSection = $('#results');
-var searchTitleDiv = $('#searchTitle')
+var searchTitleDiv = $('#searchTitle');
 
 function getRecipes() {
     var userInput = $('#userInput').val();
@@ -28,6 +28,9 @@ function getRecipes() {
 
                     $('.close').on('click', function () {
                         resultSection.empty();
+                        userInput = $('#userInput');
+                        userInput.val('');
+                        
                     });
 
                     return;
@@ -38,7 +41,6 @@ function getRecipes() {
                     searchTitle.appendTo(searchTitleDiv);
                     userInput = $('#userInput')
                     userInput.val('');
-                    // userInput.html('<input type="text" placeholder="What you got?" id="userInput">');
 
                     for (var j = 0; j < recipeData.meals.length; j++) {
                         //Not showing recipe cards if no link is present

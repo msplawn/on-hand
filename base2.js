@@ -16,7 +16,6 @@ function getRecipes() {
         })
             // We store all of the retrieved data inside of an object called "recipeData"
             .then(function (recipeData) {
-                console.log(recipeData);
                 if (recipeData.meals === null) {
                     resultSection.html('<div class="ui massive negative message">' +
                         '<i class="close icon"></i>' +
@@ -68,6 +67,4 @@ $(document).ready(function () {
         e.preventDefault();
         getRecipes();
     })
-
-    //dont delete this dummy
 });

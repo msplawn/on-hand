@@ -28,7 +28,7 @@ function updatePage(allDrinks) {
         $("<img src=" + drink.img + ">").appendTo($drinkImg);
         $drinkImg.appendTo(drinkCard);
 
-        var cardBody = $('<div class ="content">')
+        var cardBody = $('<div class ="content">');
         $("<h2>").text(drink.name).appendTo(cardBody);
         $("<h4>").text(drink.ingredient).appendTo(cardBody);
         $("<h4>").text(drink.measure).appendTo(cardBody);
@@ -45,17 +45,9 @@ $("#searchCocktails").on('click', function (event) {
     event.preventDefault();
     var ingredientName = $('#userInput').val().trim();
 
-
     resultSection.empty();
     searchTitleDiv.empty();
 
-    //takes searched ingredient and populates above recipe cards
-    var ingredientNameUpper = ingredientName.toUpperCase();
-
-    var $searchTitle = $('<div id ="#searchTitle">');
-    $("<h2>").text(ingredientNameUpper).appendTo($searchTitle);
-
-    $searchTitle.appendTo("#searchTitle");
 
     if (ingredientName !== "") {
 
@@ -106,12 +98,24 @@ $("#searchCocktails").on('click', function (event) {
                     '</p></div>');
 
                 $('.close').on('click', function () {
+
                     resultSection.empty();
+                    ingredientName = $('#userInput');
+                    ingredientName.val("");
+
                 });
 
                 return;
 
             } else {
+
+                //takes searched ingredient makes it uppsercase and populates it above recipe cards
+                var ingredientNameUpper = ingredientName.toUpperCase();
+
+                var $searchTitle = $('<div id ="#searchTitle">');
+                $("<h2>").text(ingredientNameUpper).appendTo($searchTitle);
+
+                $searchTitle.appendTo("#searchTitle");
 
                 updatePage(allDrinks);
 

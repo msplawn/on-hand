@@ -1,10 +1,11 @@
 //global variable
 var resultSection = $('#results');
-
+var searchTitleDiv = $('#searchTitle')
 
 function getRecipes() {
     var userInput = $('#userInput').val();
     resultSection.empty();
+    searchTitleDiv.empty();
 
     if (userInput !== "") {
 
@@ -32,10 +33,18 @@ function getRecipes() {
                     return;
                 }
                 else {
+                    var userInputUpper = userInput.toUpperCase()
+                    var searchTitle = $('<h2>').text(userInputUpper);
+                    searchTitle.appendTo(searchTitleDiv);
+                    userInput = $('#userInput')
+                    userInput.val('');
+                    // userInput.html('<input type="text" placeholder="What you got?" id="userInput">');
+
                     for (var j = 0; j < recipeData.meals.length; j++) {
                         //Not showing recipe cards if no link is present
                         if (recipeData.meals[j].strYoutube !== ""){
-
+                        
+                        
                         var recipeCard = $('<div class ="ui card">');
 
                         var imgDiv = $('<div class="image">');
@@ -51,6 +60,7 @@ function getRecipes() {
                         $('<a class="link" target="_blank" href=" ' + recipeData.meals[j].strYoutube + '">').text(recipeData.meals[j].strYoutube).appendTo(cardBody);
 
                         cardBody.appendTo(recipeCard);
+                        
                         recipeCard.appendTo(resultSection);
 
                         }

@@ -80,6 +80,12 @@ footer {
     margin: 8px;
 }
 
+#searchTitle    {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
 #results {
     margin: 50px;
     font-family: 'Montserrat Alternates', sans-serif;

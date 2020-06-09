@@ -1,4 +1,4 @@
-//global variable
+//global variables
 var resultSection = $('#results');
 var searchTitleDiv = $('#searchTitle');
 
@@ -70,7 +70,6 @@ function getRecipes() {
                 }
             });
     }
-
 }
 
 $(document).ready(function () {

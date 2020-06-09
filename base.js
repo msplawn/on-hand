@@ -1,5 +1,6 @@
 //global variables
 var resultSection = $("#results");
+var searchTitleDiv = $('#searchTitle');
 
 var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
@@ -43,7 +44,18 @@ function updatePage(allDrinks) {
 $("#searchCocktails").on('click', function (event) {
     event.preventDefault();
     var ingredientName = $('#userInput').val().trim();
+
+
     resultSection.empty();
+    searchTitleDiv.empty();
+
+    //takes searched ingredient and populates above recipe cards
+    var ingredientNameUpper = ingredientName.toUpperCase();
+
+    var $searchTitle = $('<div id ="#searchTitle">');
+    $("<h2>").text(ingredientNameUpper).appendTo($searchTitle);
+
+    $searchTitle.appendTo("#searchTitle");
 
     if (ingredientName !== "") {
 
@@ -56,7 +68,7 @@ $("#searchCocktails").on('click', function (event) {
         }).then(function (response) {
 
             let allDrinks = [];
-            
+
             //loop through length of drinks 
             for (var i = 0; i < response.drinks.length; i++) {
                 var drink = response.drinks[i];
@@ -81,7 +93,6 @@ $("#searchCocktails").on('click', function (event) {
                     allDrinks.push(drinkResult);
 
                 }
-
             }
 
             //If an entry has no ingredients, it will display a message
@@ -101,10 +112,13 @@ $("#searchCocktails").on('click', function (event) {
                 return;
 
             } else {
+
                 updatePage(allDrinks);
+
             }
 
+            ingredientName = $('#userInput');
+            ingredientName.val("");
         });
     }
-
 });
